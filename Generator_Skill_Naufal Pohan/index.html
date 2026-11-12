@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Generator Skill</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="kotak-mesin">
+            <h1>Generator Skill Unik</h1>
+
+            <p>
+                Masukkan Namamu Untuk melihat skill tersembunyimu!
+            </p>
+
+            <input
+                type="text"
+                id="namainput"
+                placeholder="Ketik Namamu..."
+            >
+            <button onclick="cekSkill()">
+                Cek Sekarang!
+            </button>
+
+            <img
+                id="fotoSkill"
+                src="https://placehold.co/200x200?text=?"
+                width="200"
+            >
+            <h2 id="hasilSkill">Skill belum terdeteksi...</h2>
+        </div>
+
+        <script>
+            function cekSkill() {
+                let nama = document.getElementById("namainput").value;
+
+                let daftarSkill = [
+                    "Suara Knalpot",
+                    "Gradingan Pelayan Mata",
+                    "Penyuka Mie Ayam",
+                    "Dikotil",
+                    "Otak Emas"
+                ];
+
+                let daftarGambar = [
+                    "https://www.hondacengkareng.com/wp-content/uploads/2025/05/18301K25600-MUFFLER-ASSY-EX.jpg",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4HBloRvDFMGIMq_d-_CfdC0P-EtcfwhrbeescNXtHMF45giK6VuLgJ88&s=10",
+                    "https://asset.kompas.com/crops/cMFOvdcQFBSoQ30A8IM3O52Pq-8=/0x0:3511x2341/1200x1200/data/photo/2025/12/10/69394a2b59f6c.jpg",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQUolu0qBB5c8nNmO_CoXl8PrZvRgkm5RR7kAkSMnBTQ&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg1u7VNgGB6KzAn2MzUgIe0M7EMYa-SDDm9i41zLLSzg&s=10"
+                ];
+
+                let acak = Math.floor(Math.random() * daftarSkill.length);
+
+                document.getElementById("hasilSkill").innerText =
+                    nama + ", skill unikmu: " + daftarSkill[acak];
+
+                document.getElementById("fotoSkill").src = daftarGambar[acak];
+            }
+        </script>
+    </body>
+</html>
